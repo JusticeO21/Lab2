@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;   
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("./public/photo-1634245482247-944042ae8026.avif");
+    background-size: contain;
+    margin: auto;
+    padding: 5px;
+    height: 100vh;
+    color: grey;
+    text-align: right;
+    position: relative;
+    
+}
+
+.cover{
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+h1 {
+    text-align: center;
+    margin: 30px auto;
+    color: #fff;
+    font-weight: 500;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-height: 75vh;
+    display: block;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 7px;
+    border-radius: 0;
+    margin-right: 10px;
+    color: #fff;
+}
+
+input[type="datetime-local"] {
+    padding:7px;
+    border: 1px solid #fff;
+    border-radius:0;
+}
+
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    filter: invert(40%) sepia(80%) saturate(200%) hue-rotate(90deg);
+    cursor: pointer;
+}
+
+input{
+    background: transparent;
+    color: #716f6fa0;
+    outline: none;
+    border: 1px solid #fff;
+}
+
+button {
+    border: none;
+    background: #ff7700;
+    color: #ddd7d7;
+    margin-left: 5px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+button:hover {
+    color: #000;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    max-height: 55vh;
+    overflow-y: scroll;
+    
+}
+
+ul::-webkit-scrollbar { 
+    display: none; 
+}
+
+strong {
+    font-weight: 500;
+}
+
+li {
+    position: relative;
+    display: flex;
+    gap: 20px; 
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 5px auto;
+    background-color: transparent;
+    border: 1px solid #fff;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    color:#ebe8e8;
+}
+
+.buttons,
+.descriptions{
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.descriptions{
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons{
+    margin-left: -2px;
+    padding: 0;
+    text-align: left;
+}
+
+.descriptions span{
+    display: block;
+    margin: 10px 0;
+    font-weight: 300;
+}
+
+li.completed {
+    text-decoration: line-through;
+    background: transparent;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="datetime-local"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+
+.alert-box {
+    background: #ff7700;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-align: center;
+    width: 200px;
+    position: absolute;
+    top: 5vh;
+    transition: display 5s ease-in-out;
+}
+
+.time{
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 7px;
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 70%;
+    }
+
+    li{
+        width: 400px;
+        height: 200px;
+    }
+
+    .input-area {
+        justify-content: space-between;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    button{
+        padding: 5px 18px;
+        font-size: 16px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .container {
+        max-width: 80%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .input-area {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    input[type="text"],
+    input[type="datetime-local"] {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    button{
+        padding: 8px 15px;
+        font-size: 16px;
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        max-height: 90vh;
+    }
+
+    h1 {
+        font-size: 1.75em;
+    }
+
+    .input-area {
+        flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="datetime-local"] {
+        width: 100%;
+    }
+
+    li{
+        
+        width: 350px; 
+        padding: 20px 25px 30px;
+        height: 200px;
+
+    }
+
+    button {
+        margin-top: 10px;
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    ul{
+        max-height: 50vh;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media (max-width: 600px) {
+    li{
+        height: 180px;
+        width: 100%;
+        padding: 10px 8px;
+    }
+
+    button{
+        margin-top: 0;
+        padding: 5px 10px;
+    }
+}
